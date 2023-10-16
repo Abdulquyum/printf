@@ -10,14 +10,7 @@
 void print_int(int n)
 {
 	if (n < 0)
-	{
-		_putchar('-');
-		n = -n;
-
-		print_int(n / 10);
-		_putchar(n % 10 + '0');
-	}
-
+		return;
 
 	else if (n == 0)
 		return;
