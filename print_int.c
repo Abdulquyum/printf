@@ -9,14 +9,12 @@
  */
 void print_int(int n)
 {
-	int _return = 0;
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 		print_int(n / 10);
 		_putchar(n % 10 + '0');
-		_return += 1;
 	}
 
 	else if (n == 0)
@@ -26,6 +24,5 @@ void print_int(int n)
 	{
 		print_int(n / 10);
 		_putchar(n % 10 + '0');
-		_return += 1;
 	}
 }

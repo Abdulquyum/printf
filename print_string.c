@@ -9,7 +9,7 @@
  */
 void print_string(char *str)
 {
-	int q, _return = 0;
+	int q;
 	char string;
 
 	for (q = 0; str[q] != '\0'; q++)
@@ -17,6 +17,5 @@ void print_string(char *str)
 		string = str[q];
 		_putchar(string);
 
-		_return += 1;
 	}
 }
