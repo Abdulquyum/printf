@@ -10,7 +10,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int iterate, _return = 0, c;
+	int iterate, _return = 0;
 	char a, b;
 
 	va_list printable;
@@ -45,8 +45,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[iterate + 1] == 'd' || format[iterate + 1] == 'i')
 			{
-				c = va_arg(printable, int);
-				print_int(c);
+				print_int(va_arg(printable, int));
 			}
 
 			iterate++;
