@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	va_start(printable, format);
 
 	if (format == '\0')
-		return (0);
+		putchar('\n');
 
 	for (iterate = 0; format[iterate] != '\0'; iterate++)
 	{
