@@ -21,27 +21,27 @@ int _printf(const char *format, ...)
 	{
 		if (format[iterate] != '%')
 		{
-			_putchar(format[iterate]);
-			_return += 1;
+			_return += _putchar(format[iterate]);
+
 		}
 
 		else if (format[iterate] == '%')
-		{
+		{	
 			if (format[iterate + 1] == 'c')
 			{
 				a = va_arg(printable, int);
-				 _putchar(a);
+				_putchar(a);
+
 			}
 			else if (format[iterate + 1] == 's')
 			{
 				print_string(va_arg(printable, char *));
-				_return += 1;
 
 			}
 			else if (format[iterate + 1] == '%')
 			{
 				b = '%';
-				 _putchar(b);
+				_putchar(b);
 			}
 			else if (format[iterate + 1] == 'd' || format[iterate + 1] == 'i')
 			{
@@ -50,8 +50,8 @@ int _printf(const char *format, ...)
 			}
 
 			iterate++;
-			_return += 1;
 		}
+		_return++;
 	}
 
 	return (_return);
