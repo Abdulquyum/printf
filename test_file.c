@@ -34,6 +34,8 @@ int main(void)
 	r_value2 += _printf("Unsigned:[%u]\n", ui);
 	r_value += printf("Unsigned octal:[%o]\n", ui);
 	r_value2 += _printf("Unsigned octal:[%o]\n", ui);
+	r_value += printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+	r_value += _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 
 	printf("return value == %d\n", r_value);
 	_printf("my return value == %d\n", r_value2);

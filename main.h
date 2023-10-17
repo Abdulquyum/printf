@@ -15,5 +15,6 @@ int _printable(const char *format, va_list printable_int);
 int convert_to_bin(int n);
 unsigned int handle_unsigned(unsigned int n);
 unsigned int handle_octal(unsigned int n);
+unsigned int to_hexadec(unsigned int n);
 
 #endif
