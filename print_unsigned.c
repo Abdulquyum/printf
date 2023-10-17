@@ -9,10 +9,13 @@
  */
 unsigned int handle_unsigned(unsigned int n)
 {
+	int i;
+
 	if (n <= 0)
 		return (0);
 
-	handle_unsigned(n / 10);
+	i = n / 10;
+	handle_unsigned(i);
 	_putchar(n % 10 + '0');
 	return (0);
 }
