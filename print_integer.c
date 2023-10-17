@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- *  * print_int - prints integers
- *   *
- *    * @n: number passed as argument
- *     *
- *      * Return: nothing
- *       */
+ *   print_int - prints integers
+ *   
+ *   @n: number passed as argument
+ *   
+ *   Return: nothing
+ */
 int print_int(int n)
 {
 		if (n < 0)
