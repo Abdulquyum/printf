@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include <limits.h>
 
 int main(void)
 {
@@ -8,6 +9,7 @@ int main(void)
 	int r_value, r_value2;
 	char *c = "years old";
 	int len, len2;
+	unsigned int ui;
 
 	r_value = printf("%c am %d %s\n", a, b, c);
 	r_value2 = _printf("%c am %d %s\n", a, b, c);
@@ -27,6 +29,11 @@ int main(void)
 	r_value2 += _printf("Len:[%d]\n", len2);
 	r_value += printf("%b\n", 98);
 	r_value += _printf("%b\n", 98);
+	ui = (unsigned int)INT_MAX + 1024;
+	r_value += printf("Unsigned:[%u]\n", ui);
+	r_value2 += _printf("Unsigned:[%u]\n", ui);
+	r_value += printf("Unsigned octal:[%o]\n", ui);
+	r_value2 += _printf("Unsigned octal:[%o]\n", ui);
 
 	printf("return value == %d\n", r_value);
 	_printf("my return value == %d\n", r_value2);

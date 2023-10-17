@@ -1,17 +1,8 @@
 #include <stdio.h>
+#include "main.h"
 
-int print_bin(int n);
-
-int main(void)
-{
-	print_bin(98);
-	putchar('\n');
-	return (0);
-}
 int print_bin(int n)
 {
-	int q;
-
 	if (n == 0)
 	{
 		return 0;

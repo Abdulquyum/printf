@@ -44,7 +44,7 @@ int _printable(const char *format, va_list printable)
 				_putchar('%');
 				_return += 1;
 			}
-			else if (format[iterate + 1] == 'd' || format[iterate + 1] == 'i')
+			if (format[iterate + 1] == 'd' || format[iterate + 1] == 'i')
 			{
 				print_int(va_arg(printable, int));
 				_return++;
@@ -52,6 +52,16 @@ int _printable(const char *format, va_list printable)
 			else if (format[iterate + 1] == 'b')
 			{
 				convert_to_bin(va_arg(printable, int));
+				_return += 1;
+			}
+			else if (format[iterate + 1] == 'u')
+			{
+				handle_unsigned(va_arg(printable, int));
+				_return++;
+			}
+			else if (format[iterate + 1] == 'o')
+			{
+				handle_octal(va_arg(printable, int));
 				_return += 1;
 			}
 

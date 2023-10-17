@@ -49,6 +49,11 @@ int _printable(const char *format, va_list printable)
 				print_int(va_arg(printable, int));
 				_return++;
 			}
+			else if (format[iterate + 1] == 'b')
+			{
+				print_bin(va_arg(printable, int));
+				_return += 1;
+			}
 
 			iterate++;
 		}

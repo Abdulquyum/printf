@@ -17,9 +17,9 @@ int _printf(const char *format, ...)
 
 	va_start(printable, format);
 
-	 _return = _printable(format, printable);
+	 _return += _printable(format, printable);
 
-	va_end(printable);
+	 va_end(printable);
 
 	return (_return);
 }

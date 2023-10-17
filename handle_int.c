@@ -7,7 +7,7 @@
  *
  * Return: nothing
  */
-void print_int(int n)
+int print_int(int n)
 {
 	if (n < 0)
 	{
@@ -15,14 +15,16 @@ void print_int(int n)
 		n = -n;
 		print_int(n / 10);
 		_putchar(n % 10 + '0');
+		return (0);
 	}
 
 	else if (n == 0)
-	return;
+	return (0);
 
 	else
 	{
 		print_int(n / 10);
 		_putchar(n % 10 + '0');
+		return (0);
 	}
 }
