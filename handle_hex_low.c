@@ -7,7 +7,7 @@
  *
  * Return: 0
  */
-unsigned int to_hexadec(unsigned int n)
+unsigned int to_hexadec_low(unsigned int n)
 {
 	int r;
 
@@ -15,11 +15,11 @@ unsigned int to_hexadec(unsigned int n)
 		return (0);
 
 	r = n % 16;
-	to_hexadec(n / 16);
+	to_hexadec_low(n / 16);
 	if (r < 10)
-		_putchar(r);
+		_putchar(r + '0');
 	else
-		_putchar('A' + r - 10);
+		_putchar('a' + r - 10);
 
 	return (0);
 }
