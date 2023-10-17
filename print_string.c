@@ -7,7 +7,7 @@
  *
  * Return: strings
  */
-void print_string(char *str)
+int print_string(char *str)
 {
 	int q;
 	char string;
@@ -18,4 +18,5 @@ void print_string(char *str)
 		_putchar(string);
 
 	}
+	return (0);
 }

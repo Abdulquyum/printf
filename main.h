@@ -2,12 +2,13 @@
 #define MAIN_H
 
 #include <stdarg.h>
+#include <unistd.h>
 
-#define BUFF_SIZE 1024
+#define BUFFSIZE 1024
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void print_string(char *str);
+int print_string(char *str);
 int print_int(int n);
 int _printable(const char *format, va_list printable);
 int _printable(const char *format, va_list printable_int);

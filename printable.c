@@ -11,16 +11,16 @@
  */
 int _printable(const char *format, va_list printable)
 {
-	int iterate, _return = 0;
-
-	if (format == NULL)
-		return (-1);
+	int iterate, _return = 0, buff_ind = 0;
+	char buffer[BUFFSIZE];
 
 	for (iterate = 0; format[iterate] != '\0'; iterate++)
 	{
 		if (format[iterate] != '%')
 		{
-			_putchar(format[iterate]);
+			buffer[buff_ind] = _putchar(format[iterate]);
+			if (buff_ind == BUFFSIZE)
+				write(1, buffer, buff_ind);
 			_return += 1;
 
 		}
@@ -29,45 +29,65 @@ int _printable(const char *format, va_list printable)
 		{	
 			if (format[iterate + 1] == 'c')
 			{
-				_putchar(va_arg(printable, int));
+				buffer[buff_ind] = _putchar(va_arg(printable, int));
+				if (buff_ind == BUFFSIZE)
+					write(1, buffer, buff_ind);
 				_return += 1;
 
 			}
 			else if (format[iterate + 1] == 's')
 			{
-				print_string(va_arg(printable, char *));
+				buffer[buff_ind] = print_string(va_arg(printable, char *));
+				if (buff_ind == BUFFSIZE)
+					write(1, buffer, buff_ind);
 				_return += 1;
 
 			}
 			else if (format[iterate + 1] == '%')
 			{
-				_putchar('%');
+				buffer[buff_ind] = _putchar('%');
+				if (buff_ind == BUFFSIZE)
+					write(1, buffer, buff_ind);
 				_return += 1;
 			}
 			if (format[iterate + 1] == 'd' || format[iterate + 1] == 'i')
 			{
-				print_int(va_arg(printable, int));
+				buffer[buff_ind] = print_int(va_arg(printable, int));
+				if (buff_ind == BUFFSIZE)
+					write(1, buffer, buff_ind);	
 				_return++;
 			}
 			else if (format[iterate + 1] == 'b')
 			{
-				convert_to_bin(va_arg(printable, int));
+				buffer[buff_ind] = convert_to_bin(va_arg(printable, int));
+				if (buff_ind == BUFFSIZE)
+					write(1, buffer, buff_ind);
 				_return += 1;
 			}
 			else if (format[iterate + 1] == 'u')
 			{
-				handle_unsigned(va_arg(printable, int));
+				buffer[buff_ind] = handle_unsigned(va_arg(printable, int));
+				if (buff_ind == BUFFSIZE)
+					write(1, buffer, buff_ind);
 				_return++;
 			}
 			else if (format[iterate + 1] == 'o')
 			{
-				handle_octal(va_arg(printable, int));
+				buffer[buff_ind] = handle_octal(va_arg(printable, int));
+				if (buff_ind == BUFFSIZE)
+					write(1, buffer, buff_ind);
 				_return += 1;
 			}
 
 			iterate++;
 		}
 	}
+
+	if (buffer[buff_ind] > 0)
+	{
+		write(1, format, buff_ind);
+	}
+
 	va_end(printable);
 
 	return (_return);
