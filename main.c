@@ -25,6 +25,8 @@ int main(void)
 	r_value2 += len2 = _printf("Percent:[%%]\n");
 	r_value += printf("my Len:[%d]\n", len);
 	r_value2 += _printf("Len:[%d]\n", len2);
+	r_value += printf("%b\n", 98);
+	r_value += _printf("%b\n", 98);
 
 	printf("return value == %d\n", r_value);
 	_printf("my return value == %d\n", r_value2);
