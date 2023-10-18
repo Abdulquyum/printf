@@ -13,6 +13,10 @@ int _printable(const char *format, va_list printable)
 {
 	int iterate, _return = 0;
 
+	printer all[] = {
+		{"c", _putchar}, {"s", print_string},
+		{"%", _putchar}, {"d", print_int}, {"i", print_int},
+		{"b", print_bin},
 	if (format == NULL)
 		return (-1);
 
