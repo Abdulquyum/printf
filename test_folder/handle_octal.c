@@ -7,15 +7,17 @@
  *
  * Return: 0
  */
-unsigned int handle_octal(unsigned int n)
+int handle_octal(va_list printable)
 {
+	unsigned int n = va_arg(printable, unsigned int);
+
 	if (n == 0)
 		return (0);
 
 	if (n < 8)
 		_putchar(n + '0');
 
-	handle_octal(n / 8);
+	handle_octal(printable);
 	_putchar(n % 8 + '0');
 	return (0);
 }

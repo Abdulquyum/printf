@@ -7,15 +7,16 @@
  *
  * Return: 0
  */
-unsigned int to_hexadec_high(unsigned int n)
+int to_hexadec_high(va_list printable)
 {
+	unsigned int n = va_arg(printable, unsigned int);
 	int r;
 
 	if (n == 0)
 		return (0);
 
 	r = n % 16;
-	to_hexadec_high(n / 16);
+	to_hexadec_high(printable);
 	if (r < 10)
 		_putchar(r + '0');
 	else
