@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	if (*format == '\0' || *(format + 1) == '\0')
 		return (-1);
 
-	 _return += _printable(format, printable);
+	 _return = _printable(format, printable);
 
 	 va_end(printable);
 
