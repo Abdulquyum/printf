@@ -13,6 +13,7 @@ int _printable(const char *format, va_list printable)
 {
 	int iterate, _return = 0, buff_ind = 0;
 	char buffer[BUFFSIZE];
+	char a;
 
 	for (iterate = 0; format[iterate] != '\0'; iterate++)
 	{
@@ -45,7 +46,8 @@ int _printable(const char *format, va_list printable)
 			}
 			else if (format[iterate + 1] == '%')
 			{
-				buffer[buff_ind] = _putchar('%');
+				a = '%';
+				buffer[buff_ind] = _putchar(a);
 				if (buff_ind == BUFFSIZE)
 					write(1, buffer, buff_ind);
 				_return += 1;
