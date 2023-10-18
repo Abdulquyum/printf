@@ -5,17 +5,21 @@
  *
  * @n: number passed as argument
  *
- * Return: nothing
+ * Return: count of arguments
  */
 int print_int(int n)
 {
+	int _return = 0;
+
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 		print_int(n / 10);
 		_putchar(n % 10 + '0');
-		return (0);
+		_return += 1;
+
+		return (_return);
 	}
 
 
@@ -27,6 +31,8 @@ int print_int(int n)
 	{
 		print_int(n / 10);
 		_putchar(n % 10 + '0');
-		return (0);
+		_return += 1;
+
+		return (_return);
 	}
 }
