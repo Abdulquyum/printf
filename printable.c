@@ -52,13 +52,6 @@ int _printable(const char *format, va_list printable)
 					write(1, buffer, buff_ind);
 				_return += 1;
 			}
-			if (format[iterate + 1] == 'd' || format[iterate + 1] == 'i')
-			{
-				buffer[buff_ind] = print_int(va_arg(printable, int));
-				if (buff_ind == BUFFSIZE)
-					write(1, buffer, buff_ind);	
-				_return++;
-			}
 			iterate++;
 		}
 	}

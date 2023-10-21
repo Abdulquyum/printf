@@ -5,14 +5,13 @@
 int main(void)
 {
 	char a = 'I';
-	int b = -123;
 	int r_value, r_value2;
 	char *c = "years old";
 	int len, len2;
 	unsigned int ui;
 
-	r_value = printf("%c am %d %s\n", a, b, c);
-	r_value2 = _printf("%c am %d %s\n", a, b, c);
+	r_value = printf("%c am 5 %s\n", a, c);
+	r_value2 = _printf("%c am 5 %s\n", a, c);
 	r_value += len = printf("Let's try to printf a simple sentence.\n");
 	r_value2 += len2 = _printf("Let's try to printf a simple sentence.\n");
 	r_value += printf("Length:[%d, %i]\n", len, len);
