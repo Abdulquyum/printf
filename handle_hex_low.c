@@ -7,7 +7,7 @@
  *
  * Return: 0
  */
-unsigned int to_hexadec_low(unsigned int n)
+int to_hexadec_low(unsigned int n)
 {
 	int r;
 

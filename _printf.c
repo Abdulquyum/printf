@@ -9,10 +9,14 @@
  *
  * Return:Number of character printed excluding null byte
  */
-int _printable(const char *format, va_list printable)
+int _printf(const char *format, ...)
 {
 	int iterate, _return = 0, buff_ind = 0;
 	char buffer[BUFFSIZE];
+
+	va_list printable;
+
+	va_start(printable, format);
 
 	for (iterate = 0; format[iterate] != '\0'; iterate++)
 	{
@@ -85,11 +89,11 @@ int _printable(const char *format, va_list printable)
 					write(1, buffer, buff_ind);
 			}
 			else if (format[iterate + 1] == 'X')
-                        {
-                                buffer[buff_ind] = to_hexadec_high(va_arg(printable, int));
-                                if (buff_ind == BUFFSIZE)
-                                        write(1, buffer, buff_ind);
-                        }
+			{
+				buffer[buff_ind] = to_hexadec_high(va_arg(printable, int));
+				if (buff_ind == BUFFSIZE)
+					write(1, buffer, buff_ind);
+			}
 			iterate++;
 		}
 	}

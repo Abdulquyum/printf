@@ -7,7 +7,7 @@
  *
  * Return: 0
  */
-unsigned int handle_unsigned(unsigned int n)
+int handle_unsigned(unsigned int n)
 {
 	if (n <= 0)
 		return (0);

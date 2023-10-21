@@ -1,22 +1,18 @@
 #include "main.h"
 
 /**
- * handle_octal - handle cases of integer in base 8
+ * handle_octal - hanle numbers of base 8
  *
- * @n: parameter representing arguments
+ * @n: parameter passed as base 8
  *
- * Return: 0
+ * Return: number in octal
  */
 int handle_octal(unsigned int n)
 {
-
-	if (n == 0)
+	if (n <= 0)
 		return (0);
 
-	if (n < 8)
-		_putchar(n + '0');
-
-	handle_octal(printable);
+	handle_octal(n / 8);
 	_putchar(n % 8 + '0');
 	return (0);
 }
