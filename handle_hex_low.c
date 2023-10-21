@@ -7,15 +7,15 @@
  *
  * Return: 0
  */
-int to_hexadec_low(unsigned int n)
+unsigned int to_hexadec_low(unsigned int n)
 {
-	unsigned int r;
+	int r;
 
 	if (n == 0)
 		return (0);
 
 	r = n % 16;
-	to_hexadec_low(printable);
+	to_hexadec_low(r / 16);
 	if (r < 10)
 		_putchar(r + '0');
 	else
