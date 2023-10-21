@@ -59,13 +59,6 @@ int _printable(const char *format, va_list printable)
 					write(1, buffer, buff_ind);	
 				_return++;
 			}
-			else if (format[iterate + 1] == 'b')
-			{
-				buffer[buff_ind] = convert_to_bin(va_arg(printable, int));
-				if (buff_ind == BUFFSIZE)
-					write(1, buffer, buff_ind);
-				_return += 1;
-			}
 			iterate++;
 		}
 	}

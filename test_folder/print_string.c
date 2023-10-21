@@ -12,6 +12,9 @@ int print_string(va_list printable)
 	int q;
 	char *str = va_arg(printable, char *), string;
 
+	if (str == NULL)
+		return (-1);
+
 	for (q = 0; str[q] != '\0'; q++)
 	{
 		string = str[q];

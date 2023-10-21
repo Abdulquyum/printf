@@ -20,6 +20,6 @@ int to_hexadec_low(va_list printable);
 
 typedef struct format {
 	char *checks;
-	int (*ptr) (va_list printable);
+	int (*ptr)(va_list);
 	} printer;
 #endif

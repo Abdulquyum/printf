@@ -29,47 +29,46 @@ int _printable(const char *format, va_list printable)
 
 	for (iterate = 0; format[iterate] != '\0'; iterate++)
 	{
-		if (format[iterate] != '%')
+		if (format[iterate] == '%')	
+		{
+			for (q = 0; all[q].checks != NULL; q++)
+			{
+				if (format[iterate + 1] == all[q].checks[0])
+				{
+					buffer[buff_ind] = all[q].ptr(printable);
+					if (buff_ind == BUFFSIZE)
+						write(1, buffer, buff_ind);
+					break;
+				}
+			}
+			if (all[q].checks == NULL && format[iterate + 1] != ' ')
+		
+			{
+
+				buffer[buff_ind] = _putchar('%');
+				if (buff_ind == BUFFSIZE)
+					write(1, buffer, buff_ind);
+				_return += 1;
+
+			
+				buffer[buff_ind] = _putchar(format[iterate + 1]);
+				if (buff_ind == BUFFSIZE)
+					write(1, buffer, buff_ind);
+				_return += 1;
+			}
+			else
+				return (-1);
+			iterate++;
+		}
+		else
 		{
 			buffer[buff_ind] = _putchar(format[iterate]);
 			if (buff_ind == BUFFSIZE)
 				write(1, buffer, buff_ind);
 			_return += 1;
-
-		}
-
-		else if (format[iterate] == '%')
-		{
-			if (format[iterate + 1] == '%')
-			{
-				buffer[buff_ind] = _putchar('%');
-				if (buff_ind == BUFFSIZE)
-					write(1, buffer, buff_ind);
-				_return += 1;
-			}
-			for (q = 0; q < 10; q++)
-			{
-				if (format[iterate + 1] == all[q].checks[0])
-					break;
-			}
-
-			if (q < 10)
-			{
-				buffer[buff_ind] = all[q].ptr(printable);
-				if (buff_ind == BUFFSIZE)
-					write(1, buffer, buff_ind);
-				_return++;
-			}
-			else
-			{
-				buffer[buff_ind] = _putchar(format[iterate]);
-				if (buff_ind == BUFFSIZE)
-					write(1, buffer, buff_ind);
-				_return++;
-			}
-			iterate++;
 		}
 	}
+
 
 	if (buffer[buff_ind] > 0)
 	{
