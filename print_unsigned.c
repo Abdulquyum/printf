@@ -7,14 +7,12 @@
  *
  * Return: 0
  */
-int handle_unsigned(va_list printable)
+unsigned int handle_unsigned(unsigned int n)
 {
-	unsigned int n = va_arg(printable, unsigned int);
-
 	if (n <= 0)
 		return (0);
 
-	handle_unsigned(printable);
+	handle_unsigned(n / 10);
 	_putchar(n % 10 + '0');
 	return (0);
 }

@@ -7,9 +7,8 @@
  *
  * Return: 0
  */
-int handle_octal(va_list printable)
+int handle_octal(unsigned int n)
 {
-	unsigned int n = va_arg(printable, unsigned int);
 
 	if (n == 0)
 		return (0);
