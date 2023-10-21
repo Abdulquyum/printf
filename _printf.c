@@ -18,18 +18,12 @@ int _printf(const char *format, ...)
 
 	va_start(printable, format);
 
-	if (*format == '\0' || *(format + 1) == '\0')
-		return (-1);
-
-
 	for (iterate = 0; format[iterate] != '\0'; iterate++)
 	{
 		if (format[iterate] != '%')
 		{
 			_putchar(format[iterate]);
 			_return += 1;
-
-		
 		}	
 		else if (format[iterate] == '%')
 		{
