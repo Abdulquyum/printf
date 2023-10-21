@@ -15,6 +15,7 @@ int convert_to_bin(unsigned int n)
 		return (0);
 
 	convert_to_bin(n / 2);
+
 	_return += _putchar(n % 2 + '0');
 
 	return (_return);

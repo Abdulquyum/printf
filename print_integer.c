@@ -26,7 +26,6 @@ int print_int(int n)
 	else if (n == 0)
 		return (0);
 
-
 	else
 	{
 		print_int(n / 10);

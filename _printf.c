@@ -70,7 +70,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[iterate + 1] == 'u')
 			{
-				buffer[buff_ind] = handle_unsigned(va_arg(printable, int));
+				buffer[buff_ind] = handle_unsignd(va_arg(printable, int));
 				if (buff_ind == BUFFSIZE)
 					write(1, buffer, buff_ind);
 				_return++;

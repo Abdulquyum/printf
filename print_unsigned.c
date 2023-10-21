@@ -1,18 +1,20 @@
 #include "main.h"
 
 /**
- * handle_unsigned - handle unsigned int
+ * handle_unsignd - handle unsigned int
  *
  * @n: parameter for argument passed
  *
  * Return: 0
  */
-int handle_unsigned(unsigned int n)
+int handle_unsignd(unsigned int n)
 {
 	if (n <= 0)
 		return (0);
 
-	handle_unsigned(n / 10);
+	handle_unsignd(n / 10);
+
 	_putchar(n % 10 + '0');
+
 	return (0);
 }
