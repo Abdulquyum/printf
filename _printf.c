@@ -11,7 +11,8 @@
  */
 int _printf(const char *format, ...)
 {
-	int _return = 0;
+	int _return = 0, iterate;
+	char a;
 
 	va_list printable;
 
@@ -20,9 +21,43 @@ int _printf(const char *format, ...)
 	if (*format == '\0' || *(format + 1) == '\0')
 		return (-1);
 
-	 _return = _printable(format, printable);
 
-	 va_end(printable);
+	for (iterate = 0; format[iterate] != '\0'; iterate++)
+	{
+		if (format[iterate] != '%')
+		{
+			_putchar(format[iterate]);
+			_return += 1;
+
+		
+		}	
+		else if (format[iterate] == '%')
+		{
+			if (format[iterate + 1] == 'c')
+			{
+				_putchar(va_arg(printable, int));
+				_return += 1;
+
+			
+			}
+			else if (format[iterate + 1] == 's')
+			{
+				print_string(va_arg(printable, char *));
+				_return += 1;
+
+			
+			}
+			else if (format[iterate + 1] == '%')
+			{
+				a = '%';
+				_putchar(a);
+				_return += 1;
+			}
+			iterate++;
+		}
+	}
+
+       	va_end(printable);
 
 	return (_return);
 }
