@@ -12,7 +12,5 @@ int print_string(char *str);
 int print_int(int n);
 int convert_to_bin(unsigned int n);
 int handle_octal(unsigned int n);
-int to_hexadec_low(unsigned int n);
-int to_hexadec_high(unsigned int n);
 int handle_unsignd(unsigned int n);
 #endif
