@@ -7,7 +7,7 @@
  *
  * Return: number of argument printed
  */
-int convert_to_bin(int n)
+int convert_to_bin(unsigned int n)
 {
 	int _return = 0;
 

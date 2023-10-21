@@ -7,7 +7,7 @@
  *
  * Return: count of arguments
  */
-int print_int(int n)
+int print_int(unsigned int n)
 {
 	int _return = 0;
 
